@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Simple Map</title>
+	<meta name="viewport" content="initial-scale=1.0">
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+
+
+	<!--HEADER-->
+
+	<header>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<div id="logo"><img src="https://seeklogo.com/images/V/velo-v-logo-3A538C969D-seeklogo.com.png" alt="logo marque velov" /></div>
+				</div>
+				<ul class="nav navbar-nav">
+					<li><a href="#">Info</a></li>
+					<li><a href="#">Reservation</a></li>
+					<li><a href="#">Ma Reservation</a></li>
+				</ul>
+			</div>
+		</nav>
+	</header>
+
+	<hr>
+
+
+	<!--Tutoriel-->
+
+	<section id="slider" class="container">
+		<div class="row">
+			<div class="col-lg-12">
+
+				<h1>Incredibly Basic Slider</h1>
+				<div id="slider">
+					<a href="#" class="control_next">></a>
+					<a href="#" class="control_prev"><
+						</a>
+					<ul>
+						<li>SLIDE 1</li>
+						<li>SLIDE 2</li>
+						<li>SLIDE 3</li>
+						<li>SLIDE 4</li>
+					</ul>
+				</div>
+
+				<div class="slider_option">
+					<input type="checkbox" id="checkbox">
+					<label for="checkbox">Autoplay Slider</label>
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+
+	<div>
+		<hr>
+	</div>
+
+	<!--Google Map-->
+
+	<section class="container">
+		<div class="row">
+			<div id="map" class="col-md-12">
+			</div>
+			<aside id="asideInfo" class="col-md-3">
+				<div id="resaInfo"></div>
+				<div id="resa">
+					<button id="reserver" type="button" class="btn btn-info">Reserver</button>
+				</div><br><br><br>
+				<div id="canva">
+					<div id="canvas">
+						<canvas class="roundCorners" id="newSignature"></canvas>
+					</div>
+				
+					<button id="valid" type="button" class="btn btn-success">Valider</button>
+
+					<button  id="reset" type="button" class="btn btn-danger">Reset</button>
+				</div>
+
+			</aside>
+		</div>
+	</section>
+
+	<hr>
+	<!--Footer-->
+	<footer id="footer" class="container">
+		<div class="row">
+			<div id="timing" class="col-lg-12">
+	            <div class="container">
+					<!-- <input type="date" name="endDate"> -->
+					<div id="clock">
+						<div><span class="minutes">0</span>
+							<small>Minutes</small></div>
+						<div><span class="seconds">0</span>
+							<small>Seconds</small></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<!-- <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClHxtWRokpRYZNGfGOtPqzctP_9TsrNKA" async defer></script>
+	<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+	</script>
+	
+	<script type="text/javascript" src="js/signature.js"></script>
+	<script type="text/javascript" src="js/slider.js"></script>
+	<script type="text/javascript" src="js/countdown.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>
