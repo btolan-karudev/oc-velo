@@ -9,165 +9,164 @@ var iconBase;
 $('#timing').hide();
 
 var savedTime = sessionStorage.getItem('countDown') || false;
-					
-	if (savedTime) {
-		startClock(savedTime);
-		$('#timing').show();
-	}	
+
+if (savedTime) {
+    startClock(savedTime);
+    $('#timing').show();
+}
 
 $('#asideInfo').hide();
 $('#canva').hide();
 
 
-
 function initMap() {
-	map = new google.maps.Map(document.getElementById('map'), {
-		center: {
-			lat: 45.76404,
-			lng: 4.83566
-		},
-		zoom: 13,
-		minZoom: 11,
-		maxZoom: 22,
-	});
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {
+            lat: 45.76404,
+            lng: 4.83566
+        },
+        zoom: 13,
+        minZoom: 11,
+        maxZoom: 22,
+    });
 
-	//appele jcdevaux avec ajax
-	ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=c59b83194264e938b79a66af6d880dda6d6a2c8b",
-		function (reponse) {
-			stations = JSON.parse(reponse);
+    //appele jcdevaux avec ajax
+    ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=c59b83194264e938b79a66af6d880dda6d6a2c8b",
+        function (reponse) {
+            stations = JSON.parse(reponse);
 
-			iconBase = 'images/';
-			icons = {
-				dispo: {
-					icon: iconBase + 'if_Paul-07_2534339.png'
-				},
-				limit: {
-					icon: iconBase + 'if_Jee-07_2180492.png'
-				},
-				nada: {
-					icon: iconBase + 'if_Facebook_UI-07_2344289.png'
-				},
-
-
-			};
-			
-			for (var i = 0; i < stations.length; i++) {
-				// Récupère la position du tableau de localisation.
-				var position = stations[i].position;
-				var name = stations[i].name;
-				var address = stations[i].address;
-				var status = stations[i].status;
-				var available_bike_stands = stations[i].available_bike_stands;
-				var available_bikes = stations[i].available_bikes;
-				var stat;
+            iconBase = 'images/';
+            icons = {
+                dispo: {
+                    icon: iconBase + 'if_Paul-07_2534339.png'
+                },
+                limit: {
+                    icon: iconBase + 'if_Jee-07_2180492.png'
+                },
+                nada: {
+                    icon: iconBase + 'if_Facebook_UI-07_2344289.png'
+                },
 
 
+            };
 
-				var resOK = false;
-				var iconColor;
-				if (status === "CLOSED") {
-					iconColor = "nada";
-				} else if ((status === "OPEN") && (available_bikes > 0)) {
-					iconColor = "dispo";
-					var resOK = true;
-				} else if ((status === "OPEN") && (available_bikes === 0)) {
-					iconColor = "limit";
-				};
+            for (var i = 0; i < stations.length; i++) {
+                // Récupère la position du tableau de localisation.
+                var position = stations[i].position;
+                var name = stations[i].name;
+                var address = stations[i].address;
+                var status = stations[i].status;
+                var available_bike_stands = stations[i].available_bike_stands;
+                var available_bikes = stations[i].available_bikes;
+                var stat;
 
 
-				var marker = new google.maps.Marker({
-					map: map,
-					position: position,
-					title: name,
-					address: address,
-					status: status,
-					available_bike_stands: available_bike_stands,
-					available_bikes: available_bikes,
-					animation: google.maps.Animation.DROP,
-					id: i,
-					icon: icons[iconColor].icon,
-					reservation: resOK
-				});
+                var resOK = false;
+                var iconColor;
+                if (status === "CLOSED") {
+                    iconColor = "nada";
+                } else if ((status === "OPEN") && (available_bikes > 0)) {
+                    iconColor = "dispo";
+                    var resOK = true;
+                } else if ((status === "OPEN") && (available_bikes === 0)) {
+                    iconColor = "limit";
+                }
+                ;
 
-				markers.push(marker);
-				
-				marker.addListener('click', function () {
 
-					if (this.reservation === true) {
-						$("#reserver").prop('disabled', false);
-					} else {
-						$("#reserver").prop('disabled', true);
-					}
-					
-					$('#map').removeClass('col-md-12');
-					$('#map').addClass('col-md-9');
-					$('#asideInfo').fadeIn("slow");
-					$("#resaInfo").empty();
-					$('#canva').hide();
-					Signature.signatureClear();
-					$("#resaInfo").append("<br> Adresse: " + this.address + "<br> Status: " 
-						+ this.status + "<br> Nombre de velo :" + this.available_bikes);
-				});
+                var marker = new google.maps.Marker({
+                    map: map,
+                    position: position,
+                    title: name,
+                    address: address,
+                    status: status,
+                    available_bike_stands: available_bike_stands,
+                    available_bikes: available_bikes,
+                    animation: google.maps.Animation.DROP,
+                    id: i,
+                    icon: icons[iconColor].icon,
+                    reservation: resOK
+                });
 
-				$('#reserver').click(function () {
-					
-					$('#canva').fadeIn("slow");
-					$('#valid').hide();
-					$('#reset').hide();
-				});
-				$('#newSignature').click(function () {
-					
-					$('#valid').fadeIn("slow");
-					$('#reset').fadeIn("slow");
-		
-				});
-				$('#reset').click(function () {
-					
-					Signature.signatureClear();
-					$('#valid').hide();
-					
-		
-				});
-				$('#valid').click(function () {
-				
-					
-					var endDate = new Date().getTime() + (10*1000);
-					
-					startClock(endDate);
-					sessionStorage.setItem('countDown', endDate);
-					$('#timing').fadeIn("slow");
-				
-		
-				});
-				
+                markers.push(marker);
 
-			}
-	
-			var markerCluster = new MarkerClusterer(map, markers, {
-				imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-			});
+                marker.addListener('click', function () {
 
-		}
-	);
+                    if (this.reservation === true) {
+                        $("#reserver").prop('disabled', false);
+                    } else {
+                        $("#reserver").prop('disabled', true);
+                    }
+
+                    $('#map').removeClass('col-md-12');
+                    $('#map').addClass('col-md-9');
+                    $('#asideInfo').fadeIn("slow");
+                    $("#resaInfo").empty();
+                    $('#canva').hide();
+                    Signature.signatureClear();
+                    $("#resaInfo").append("<br> Adresse: " + this.address + "<br> Status: "
+                        + this.status + "<br> Nombre de velo :" + this.available_bikes);
+                });
+
+                $('#reserver').click(function () {
+
+                    $('#canva').fadeIn("slow");
+                    $('#valid').hide();
+                    $('#reset').hide();
+                });
+                $('#newSignature').click(function () {
+
+                    $('#valid').fadeIn("slow");
+                    $('#reset').fadeIn("slow");
+
+                });
+                $('#reset').click(function () {
+
+                    Signature.signatureClear();
+                    $('#valid').hide();
+
+
+                });
+                $('#valid').click(function () {
+
+
+                    var endDate = new Date().getTime() + (10 * 1000);
+
+                    startClock(endDate);
+                    sessionStorage.setItem('countDown', endDate);
+                    $('#timing').fadeIn("slow");
+
+
+                });
+
+
+            }
+
+            var markerCluster = new MarkerClusterer(map, markers, {
+                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
+            });
+
+        }
+    );
 }
 
 // requete ajax generique
 function ajaxGet(url, callback) {
-	var req = new XMLHttpRequest();
-	req.open("GET", url);
-	req.addEventListener("load", function () {
-		if (req.status >= 200 && req.status < 400) {
-			callback(req.responseText);
-		} else {
-			console.error(req.status + " " + req.statusText + " " + url);
-		}
-	});
-	req.addEventListener("error", function () {
-		console.error("Erreur URL " + url);
-	});
-	req.send(null);
+    var req = new XMLHttpRequest();
+    req.open("GET", url);
+    req.addEventListener("load", function () {
+        if (req.status >= 200 && req.status < 400) {
+            callback(req.responseText);
+        } else {
+            console.error(req.status + " " + req.statusText + " " + url);
+        }
+    });
+    req.addEventListener("error", function () {
+        console.error("Erreur URL " + url);
+    });
+    req.send(null);
 }
 
 $(function () {
-		initMap();
+    initMap();
 });

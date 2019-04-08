@@ -4,8 +4,8 @@ var slideHeight = $('#slider ul li').height();
 var sliderUlWidth = slideCount * slideWidth;
 
 var Slider = {
-  
-		moveLeft: function() {
+
+    moveLeft: function () {
         $('#slider ul').animate({
             left: +slideWidth
         }, 200, function () {
@@ -14,7 +14,7 @@ var Slider = {
         });
     },
 
-        moveRight: function() {
+    moveRight: function () {
         $('#slider ul').animate({
             left: -slideWidth
         }, 200, function () {
@@ -22,7 +22,7 @@ var Slider = {
             $('#slider ul').css('left', '');
         });
     },
-        moveRGkey: function(event) {
+    moveRGkey: function (event) {
         e = event || window.event;
 
         if (e.keyCode == '37') {
@@ -36,21 +36,19 @@ var Slider = {
 
 jQuery(document).ready(function ($) {
 
-  $('#checkbox').change(function(){
-    setInterval(function () {
-        moveRight();
-    }, 3000);
-  });
-  
-	
-	
-	$('#slider').css({ width: slideWidth, height: slideHeight });
-	
-	$('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
-	
+    $('#checkbox').change(function () {
+        setInterval(function () {
+            moveRight();
+        }, 3000);
+    });
+
+
+    $('#slider').css({width: slideWidth, height: slideHeight});
+
+    $('#slider ul').css({width: sliderUlWidth, marginLeft: -slideWidth});
+
     $('#slider ul li:last-child').prependTo('#slider ul');
 
-    
 
     $('a.control_prev').click(function () {
         Slider.moveLeft();
@@ -63,6 +61,6 @@ jQuery(document).ready(function ($) {
     $('body').on('keydown', function () {
         Slider.moveRGkey();
     });
-    
+
 
 });    
