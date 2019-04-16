@@ -2,7 +2,7 @@ var canvas = document.getElementById("newSignature");
 var context = canvas.getContext("2d");
 var disableSave = true;
 var pixels = [];
-var cpixels = [];
+// var cpixels = [];
 var xyLast = {};
 var xyAddLast = {};
 var calculate = false;
@@ -125,6 +125,5 @@ var Signature = {
     },
 
 
-}
+};
 
-Signature.signatureCapture();

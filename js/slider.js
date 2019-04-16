@@ -31,36 +31,4 @@ var Slider = {
             Slider.moveRight();
         }
     }
-}
-
-
-jQuery(document).ready(function ($) {
-
-    $('#checkbox').change(function () {
-        setInterval(function () {
-            moveRight();
-        }, 3000);
-    });
-
-
-    $('#slider').css({width: slideWidth, height: slideHeight});
-
-    $('#slider ul').css({width: sliderUlWidth, marginLeft: -slideWidth});
-
-    $('#slider ul li:last-child').prependTo('#slider ul');
-
-
-    $('a.control_prev').click(function () {
-        Slider.moveLeft();
-    });
-
-    $('a.control_next').click(function () {
-        Slider.moveRight();
-    });
-
-    $('body').on('keydown', function () {
-        Slider.moveRGkey();
-    });
-
-
-});    
+} ;

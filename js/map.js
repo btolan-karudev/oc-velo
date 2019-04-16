@@ -67,11 +67,10 @@ function initMap() {
                     iconColor = "nada";
                 } else if ((status === "OPEN") && (available_bikes > 0)) {
                     iconColor = "dispo";
-                    var resOK = true;
+                    resOK = true;
                 } else if ((status === "OPEN") && (available_bikes === 0)) {
                     iconColor = "limit";
                 }
-                ;
 
 
                 var marker = new google.maps.Marker({
@@ -108,36 +107,7 @@ function initMap() {
                         + this.status + "<br> Nombre de velo :" + this.available_bikes);
                 });
 
-                $('#reserver').click(function () {
 
-                    $('#canva').fadeIn("slow");
-                    $('#valid').hide();
-                    $('#reset').hide();
-                });
-                $('#newSignature').click(function () {
-
-                    $('#valid').fadeIn("slow");
-                    $('#reset').fadeIn("slow");
-
-                });
-                $('#reset').click(function () {
-
-                    Signature.signatureClear();
-                    $('#valid').hide();
-
-
-                });
-                $('#valid').click(function () {
-
-
-                    var endDate = new Date().getTime() + (10 * 1000);
-
-                    startClock(endDate);
-                    sessionStorage.setItem('countDown', endDate);
-                    $('#timing').fadeIn("slow");
-
-
-                });
 
 
             }
@@ -167,6 +137,3 @@ function ajaxGet(url, callback) {
     req.send(null);
 }
 
-$(function () {
-    initMap();
-});
