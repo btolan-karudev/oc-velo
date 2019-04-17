@@ -5,13 +5,14 @@
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css"
-          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+    crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-
+    <div class="container">
 
 <!--HEADER-->
 
@@ -42,8 +43,8 @@
 
             <h1>Incredibly Basic Slider</h1>
             <div id="slider">
-                <a href="#" class="control_next">></a>
-                <a href="#" class="control_prev"><
+                <a href="#" class="control_next"> > </a>
+                <a href="#" class="control_prev"> <
                 </a>
                 <ul>
                     <li>SLIDE 1</li>
@@ -98,6 +99,7 @@
 <footer id="footer" class="container">
     <div class="row">
         <div id="timing" class="col-lg-12">
+            <dd>Votre reservation va prendre fin dans:</dd>
             <div class="container">
                 <!-- <input type="date" name="endDate"> -->
                 <div id="clock">
@@ -112,10 +114,12 @@
         </div>
     </div>
 </footer>
-
+</div>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
-<!-- <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" 
+        crossorigin="anonymous"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClHxtWRokpRYZNGfGOtPqzctP_9TsrNKA" async defer></script>
 <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
 </script>
