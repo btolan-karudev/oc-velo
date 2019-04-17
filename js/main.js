@@ -7,7 +7,7 @@ $(function () {
     //signature controls
     $('#reserver').click(function () {
 
-        $('#canva').fadeIn("slow");
+        $('#canvas').fadeIn("slow");
         $('#valid').hide();
         $('#reset').hide();
     });
@@ -30,8 +30,8 @@ $(function () {
         sessionStorage.setItem('countDown', endDate);
         startClock(endDate);
         $('#asideInfo').hide();
-        $('#canva').hide();
-
+        $('#canvas').hide();
+        $('#map').removeClass('col-md-9').addClass('col-md-12');
         $('#timing').fadeIn("slow");
 
     });

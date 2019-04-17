@@ -23,11 +23,11 @@ var Signature = {
         canvas.addEventListener('mousedown', Signature.on_mousedown, false);
     },
 
-    signatureSave: function () {
-        var canvas = document.getElementById("newSignature"); // save canvas image as data url (png format by default)
-        var dataURL = canvas.toDataURL("image/png");
-        document.getElementById("saveSignature").src = dataURL;
-    },
+    // signatureSave: function () {
+    //     var canvas = document.getElementById("newSignature"); // save canvas image as data url (png format by default)
+    //     var dataURL = canvas.toDataURL("image/png");
+    //     document.getElementById("saveSignature").src = dataURL;
+    // },
 
     signatureClear: function () {
         var canvas = document.getElementById("newSignature");

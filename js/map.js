@@ -16,7 +16,7 @@ if (savedTime) {
 }
 
 $('#asideInfo').hide();
-$('#canva').hide();
+$('#canvas').hide();
 
 
 function initMap() {
@@ -90,25 +90,28 @@ function initMap() {
                 markers.push(marker);
 
                 marker.addListener('click', function () {
+                        if (sessionStorage.getItem('countDown')) {
+                            $('#infoReservation').removeClass('d-none');
+                            setInterval(function () {
+                                $('#infoReservation').addClass('d-none');
+                            }, 10000)
 
-                    if (this.reservation === true) {
-                        $("#reserver").prop('disabled', false);
-                    } else {
-                        $("#reserver").prop('disabled', true);
+                        } else {
+                            if (this.reservation === true) {
+                                $("#reserver").prop('disabled', false);
+                            } else {
+                                $("#reserver").prop('disabled', true);
+                            }
+
+                            $('#map').removeClass('col-md-12').addClass('col-md-9');
+                            $('#asideInfo').fadeIn("slow");
+                            $('#canvas').hide();
+                            Signature.signatureClear();
+                            $("#resaInfo").empty().append("<br> Adresse: " + this.address + "<br> Status: "
+                                + this.status + "<br> Nombre de velo :" + this.available_bikes);
+                        }
                     }
-
-                    $('#map').removeClass('col-md-12');
-                    $('#map').addClass('col-md-9');
-                    $('#asideInfo').fadeIn("slow");
-                    $("#resaInfo").empty();
-                    $('#canva').hide();
-                    Signature.signatureClear();
-                    $("#resaInfo").append("<br> Adresse: " + this.address + "<br> Status: "
-                        + this.status + "<br> Nombre de velo :" + this.available_bikes);
-                });
-
-
-
+                );
 
             }
 
