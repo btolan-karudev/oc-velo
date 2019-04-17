@@ -7,25 +7,25 @@ var secondsSpan = clock.querySelector('.seconds');
 
 
 function startClock(endTime) {
-    function updateCounter() {
+    timeInterval = setInterval(function () {
+
         var t = timeRemaining(endTime);
 
         minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
         secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-        if (t.total == 0) {
+
+        console.log(t);
+        if (t.minutes == 0 && (t.seconds == 0 || t.seconds == 1)) {
             console.log(t.total);
             clearInterval(timeInterval);
-
             sessionStorage.clear();
-            // $('#timing').hide();
-        } else {
-            console.log("Le clearinterval ne functione pas");
+            setTimeout(function () {
+                $('#timing').hide();
+            }, 2000);
         }
 
-    }
+    }, 1000);
 
-    updateCounter();
-    timeInterval = setInterval(updateCounter, 1000);
 }
 
 

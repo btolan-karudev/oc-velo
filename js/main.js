@@ -26,15 +26,17 @@ $(function () {
     });
     $('#valid').click(function () {
 
-
-        var endDate = new Date().getTime() + (10 * 1000);
-
-        startClock(endDate);
+        var endDate = new Date().getTime() + (10 * 3000);
         sessionStorage.setItem('countDown', endDate);
+        startClock(endDate);
+
         $('#timing').fadeIn("slow");
 
-
     });
+
+    if (sessionStorage.getItem('countDown')) {
+        startClock(sessionStorage.countDown);
+    }
 
     //slider controls
     $('#checkbox').change(function () {
