@@ -78,7 +78,7 @@ function initMap() {
                     position: position,
                     title: name,
                     address: address,
-                    status: status,
+                    status: status === "OPEN" && available_bikes > 0 ? "DISPONIBLE" : "VELO INDISPONIBLE",
                     available_bike_stands: available_bike_stands,
                     available_bikes: available_bikes,
                     animation: google.maps.Animation.DROP,
@@ -91,6 +91,7 @@ function initMap() {
 
                 marker.addListener('click', function () {
                         if (sessionStorage.getItem('countDown')) {
+
                             $('#infoReservation').removeClass('d-none');
                             setInterval(function () {
                                 $('#infoReservation').addClass('d-none');
@@ -107,7 +108,7 @@ function initMap() {
                             $('#asideInfo').fadeIn("slow");
                             $('#canvas').hide();
                             Signature.signatureClear();
-                            $("#resaInfo").empty().append("<br> Adresse: " + this.address + "<br> Status: "
+                            $("#resaInfo").empty().append("<br> Adresse: " + this.address + "<br> Etat station: "
                                 + this.status + "<br> Nombre de velo :" + this.available_bikes);
                         }
                     }
