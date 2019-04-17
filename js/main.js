@@ -43,7 +43,7 @@ $(function () {
     //slider controls
     $('#checkbox').change(function () {
         setInterval(function () {
-            moveRight();
+            Slider.moveRight();
         }, 3000);
     });
 
