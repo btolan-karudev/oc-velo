@@ -29,6 +29,8 @@ $(function () {
         var endDate = new Date().getTime() + (10 * 3000);
         sessionStorage.setItem('countDown', endDate);
         startClock(endDate);
+        $('#asideInfo').hide();
+        $('#canva').hide();
 
         $('#timing').fadeIn("slow");
 
