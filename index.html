@@ -86,7 +86,7 @@
             </div>
             <aside id="asideInfo" class="col-md-3">
                 <div id="resaInfo" class="mb-3"></div>
-                <form action="">
+                <form id="formID" action="">
 
                     <div class="input-group">
                         <input type="text" required="required" class="form-control" placeholder="Votre Nom" id="name">
@@ -96,8 +96,9 @@
                         <input type="text" required="required" class="form-control" placeholder="Votre prenom"
                                id="surname">
                     </div>
-                    <div id="resa" class="d-flex justify-content-center mb-3">
+                    <div id="resa" class="d-flex justify-content-around mb-3">
                         <button id="reserver" type="submit" class="btn btn-info">Reserver</button>
+                        <button id="resetName" type="button" class="btn btn-danger">Reset Name</button>
                     </div>
                     <div id="canvas">
                         <div id="canvasID">
@@ -106,7 +107,7 @@
                         <div class="d-flex justify-content-around mt-2">
                             <button id="valid" type="submit" class="btn btn-success">Valider</button>
 
-                            <button id="reset" type="button" class="btn btn-danger">Reset</button>
+                            <button id="reset" type="button" class="btn btn-danger">Reset Canvas</button>
                         </div>
                     </div>
                 </form>

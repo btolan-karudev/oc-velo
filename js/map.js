@@ -91,8 +91,11 @@ function initMap() {
 
                 marker.addListener('click', function () {
                         if (sessionStorage.getItem('countDown')) {
+                            // $('#infoReservation').removeClass('d-none');
+                            $([document.documentElement, document.body]).animate({
+                                scrollTop: $('#infoReservation').removeClass('d-none').offset().top
+                            }, 500);
 
-                            $('#infoReservation').removeClass('d-none');
                             setInterval(function () {
                                 $('#infoReservation').addClass('d-none');
                             }, 10000)
