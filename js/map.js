@@ -47,7 +47,6 @@ function initMap() {
                     icon: iconBase + 'if_Facebook_UI-07_2344289.png'
                 },
 
-
             };
 
             for (var i = 0; i < stations.length; i++) {
@@ -91,15 +90,7 @@ function initMap() {
 
                 marker.addListener('click', function () {
                         if (sessionStorage.getItem('countDown')) {
-                            // $('#infoReservation').removeClass('d-none');
-                            $([document.documentElement, document.body]).animate({
-                                scrollTop: $('#infoReservation').removeClass('d-none').offset().top
-                            }, 500);
-
-                            setInterval(function () {
-                                $('#infoReservation').addClass('d-none');
-                            }, 10000)
-
+                            $('#infoReservation').removeClass('d-none');
                         } else {
                             if (this.reservation === true) {
                                 $("#reserver").prop('disabled', false);

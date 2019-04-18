@@ -4,19 +4,7 @@ $(function () {
         //initialize map
         initMap();
 
-        document.getElementById('formID').addEventListener('submit', function (e) {
-            // This will fire when the form submit button is pressed,
-            // or when the user presses enter inside of a field.
 
-            // Get the value from the username field.
-            var nameInput = document.getElementById('name').value;
-            var surnameInput = document.getElementById('surname').value;
-
-            //localStorage name and surname
-            localStorage.setItem('name', nameInput);
-            localStorage.setItem('surname', surnameInput);
-
-        });
 
         if (localStorage.getItem('name') && localStorage.getItem('surname')) {
             console.log(localStorage.getItem('surname'));
@@ -57,16 +45,31 @@ $(function () {
     });
     $('#valid').click(function (e) {
         e.preventDefault();
-        sessionStorage.clear();
-        var endDate = new Date().getTime() + (20 * 60 * 1000);
-        sessionStorage.setItem('countDown', endDate);
-        startClock(endDate);
-        $('#asideInfo').hide();
-        $('#canvas').hide();
-        $('#map').removeClass('col-md-9').addClass('col-md-12');
-        $([document.documentElement, document.body]).animate({
-            scrollTop: $('#timing').delay(1000).fadeIn(600).offset().bottom
-        }, 500);
+
+        var nameInput = document.getElementById('name').value;
+        var surnameInput = document.getElementById('surname').value;
+console.log(nameInput);
+        if (nameInput !== '' && surnameInput !== '') {
+            //localStorage name and surname
+            localStorage.setItem('name', nameInput);
+            localStorage.setItem('surname', surnameInput);
+            sessionStorage.clear();
+            var endDate = new Date().getTime() + (20 * 60 * 1000);
+            sessionStorage.setItem('countDown', endDate);
+            startClock(endDate);
+            $('#asideInfo').hide();
+            $('#canvas').hide();
+            $('#map').removeClass('col-md-9').addClass('col-md-12');
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $('#timing').delay(1000).fadeIn(600).offset().bottom
+            }, 500);
+        } else {
+            alert('Veuillez indiquez votre nom et votre prenom');
+        }
+
+
+
+
 
     });
 
@@ -83,28 +86,20 @@ $(function () {
 
     // cancelReservation();
 
+    var autoplay;
     $('#checkbox').change(function () {
 
-        setInterval(function () {
-            Slider.moveRight();
-        }, 5000);
+        if ($('#checkbox').is(':checked')){
+            autoplay = setInterval(function () {
+                Slider.moveRight();
+            }, 5000);
+        } else {
+            clearInterval(autoplay);
+        }
+
 
     });
-    //slider controls
-    // $('#checkbox').change(function () {
-    //     console.log(this.value);
-    //     if ($('#checkbox').val() === 'on') {
-    //         setInterval(function () {
-    //             Slider.moveRight();
-    //         }, 5000);
-    //     } else {
-    //         clearInterval();
-    //     }
-    // });
-    //
-    // $('#checkbox').trigger('change');
 
-    console.log($('#checkbox').val())
 
     $('#slider').css({width: slideWidth, height: slideHeight});
 
