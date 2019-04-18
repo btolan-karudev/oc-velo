@@ -1,6 +1,7 @@
 $(function () {
     //initialize map
     initMap();
+
     // call signatureCapture function
     Signature.signatureCapture();
 
@@ -48,7 +49,7 @@ $(function () {
     $('#checkbox').change(function () {
         setInterval(function () {
             Slider.moveRight();
-        }, 3000);
+        }, 5000);
     });
 
 
