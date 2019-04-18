@@ -1,104 +1,106 @@
 /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
 #map {
-  width: 640px;
-  height: 580px;
+    width: 640px;
+    height: 580px;
 }
+
 /* Optional: Makes the sample page fill the window. */
 html, body {
-  /*height: 100%;*/
-  margin: 0;
-  padding: 0;
+    /*height: 100%;*/
+    margin: 0;
+    padding: 0;
 }
 
 /*///////////////// NAV ///////////*/
 
 /*///////////////// Tutoriel ///////////*/
 
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);	
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600);
+
 
 html {
-  border-top: 5px solid #fff;
-  /*background: #58DDAF;*/
-  color: #2a2a2a;
+    border-top: 5px solid #fff;
+    /*background: #58DDAF;*/
+    color: #2a2a2a;
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Open Sans';
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans';
 }
 
 h1 {
-  color: #fff;
-  text-align: center;
-  font-weight: 300;
+    color: #fff;
+    text-align: center;
+    font-weight: 300;
 }
 
 #slider {
-  position: relative;
-  overflow: hidden;
-  margin: 20px auto 0 auto;
-  border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    margin: 20px auto 0 auto;
+    border-radius: 4px;
 }
 
 #slider ul {
-  position: relative;
-  margin: 0;
-  padding: 0;
-  height: 200px;
-  list-style: none;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    height: 200px;
+    list-style: none;
 }
 
 #slider ul li {
-  position: relative;
-  display: block;
-  float: left;
-  margin: 0;
-  padding: 0;
-  width: 1000px;
-  height: 600px;
-  background: #ccc;
-  text-align: center;
-  line-height: 300px;
+    position: relative;
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 1000px;
+    height: 600px;
+    background: #ccc;
+    text-align: center;
+    line-height: 300px;
 }
 
 a.control_prev, a.control_next {
-  position: absolute;
-  top: 40%;
-  z-index: 999;
-  display: block;
-  padding: 4% 3%;
-  width: auto;
-  height: auto;
-  background: #2a2a2a;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 18px;
-  opacity: 0.8;
-  cursor: pointer;
+    position: absolute;
+    top: 40%;
+    z-index: 999;
+    display: block;
+    padding: 4% 3%;
+    width: auto;
+    height: auto;
+    background: #2a2a2a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    opacity: 0.8;
+    cursor: pointer;
 }
 
 a.control_prev:hover, a.control_next:hover {
-  opacity: 1;
-  -webkit-transition: all 0.2s ease;
+    opacity: 1;
+    -webkit-transition: all 0.2s ease;
 }
 
 a.control_prev {
-  border-radius: 0 2px 2px 0;
+    border-radius: 0 2px 2px 0;
 }
 
 a.control_next {
-  right: 0;
-  border-radius: 2px 0 0 2px;
+    right: 0;
+    border-radius: 2px 0 0 2px;
 }
 
 .slider_option {
-  position: relative;
-  margin: 10px auto;
-  width: 160px;
-  font-size: 18px;
+    position: relative;
+    margin: 10px auto;
+    width: 160px;
+    font-size: 18px;
 }
 
 
@@ -107,43 +109,69 @@ a.control_next {
 /*///////////////// Footer info ///////////*/
 
 #timing {
-  text-align: center;
-  background-color: coral;
+    text-align: center;
+    background-color: coral;
 }
+
 #clock {
-  /*background-color: chocolate;*/
-  color: white;
-  width: 100%;
-  text-align: center;
-  font-size: 2em;
+    /*background-color: chocolate;*/
+    color: white;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
 }
+
 #clock > div {
-  display: inline-block;
-  padding: 5px;
-  border-radius: 5px;
-  background-color: midnightblue;
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: midnightblue;
 }
+
 #clock div > span {
-  padding: 10px;
-  border-radius: 5px;
-  background-color: darkcyan;
-  display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: darkcyan;
+    display: inline-block;
 }
 
 small {
-  padding-top: 5px;
-  font-size: 0.9em;
+    padding-top: 5px;
+    font-size: 0.9em;
 }
 
 input {
-  font-size: 1.5em;
-  margin: 25px;
-  padding: 10px;
+    font-size: 1.5em;
+    margin: 25px;
+    padding: 10px;
 }
 
 #newSignature {
-  position: relative; 
-  margin: 0; 
-  padding: 0; 
-  border: 1px solid #c4caac;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #c4caac;
+}
+
+.d-flexPerso {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 500px;
+    height: 800px;
+    align-content: space-between;
+}
+
+ul li img {
+    height: 600px;
+    width: 800px;
+}
+
+ul li p {
+    width: 200px;
+    height: 500px;
+}
+
+#slider ul li {
+    line-height: 1;
 }
