@@ -12,33 +12,37 @@ $(function () {
         $('#reset').hide();
     });
     $('#newSignature').click(function () {
-
         $('#valid').fadeIn("slow");
         $('#reset').fadeIn("slow");
-
     });
     $('#reset').click(function () {
-
         Signature.signatureClear();
         $('#valid').hide();
-
-
     });
     $('#valid').click(function () {
-
-        var endDate = new Date().getTime() + (10 * 3000);
+        sessionStorage.clear();
+        var endDate = new Date().getTime() + (20*60*1000);
         sessionStorage.setItem('countDown', endDate);
         startClock(endDate);
         $('#asideInfo').hide();
         $('#canvas').hide();
         $('#map').removeClass('col-md-9').addClass('col-md-12');
-        $('#timing').fadeIn("slow");
+        $('#timing').delay(1000).fadeIn(600);
 
     });
 
     if (sessionStorage.getItem('countDown')) {
         startClock(sessionStorage.countDown);
     }
+
+    $('#cancelReservation').click(function () {
+        $('#infoReservation').addClass('d-none');
+        sessionStorage.clear();
+        clearInterval(timeInterval);
+        $('#timing').hide();
+    });
+
+    // cancelReservation();
 
     //slider controls
     $('#checkbox').change(function () {
