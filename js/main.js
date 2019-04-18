@@ -83,13 +83,28 @@ $(function () {
 
     // cancelReservation();
 
-    //slider controls
     $('#checkbox').change(function () {
+
         setInterval(function () {
             Slider.moveRight();
         }, 5000);
-    });
 
+    });
+    //slider controls
+    // $('#checkbox').change(function () {
+    //     console.log(this.value);
+    //     if ($('#checkbox').val() === 'on') {
+    //         setInterval(function () {
+    //             Slider.moveRight();
+    //         }, 5000);
+    //     } else {
+    //         clearInterval();
+    //     }
+    // });
+    //
+    // $('#checkbox').trigger('change');
+
+    console.log($('#checkbox').val())
 
     $('#slider').css({width: slideWidth, height: slideHeight});
 
