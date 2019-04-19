@@ -1,17 +1,18 @@
 $(function () {
 
+    //apelle la deuxieme fois le wondows onload pour l api de google maps
     window.onload = function () {
         //initialize map
         initMap();
 
-
+        //verifier si le local storige est en place pour recuperer le nom et le prenom
         if (localStorage.getItem('name') && localStorage.getItem('surname')) {
             console.log(localStorage.getItem('surname'));
             $('#name').val(localStorage.getItem('name'));
             $('#surname').val(localStorage.getItem('surname'));
 
         }
-
+        //button reset nom et prenom
         $('#resetName').click(function (e) {
             e.preventDefault();
             localStorage.removeItem('name');
@@ -28,20 +29,25 @@ $(function () {
     Signature.signatureCapture();
 
     //signature controls
+    //quand on appuie sur le buton reserver affichage de canvas
     $('#reserver').click(function (e) {
         e.preventDefault();
         $('#canvas').fadeIn("slow");
         $('#valid').hide();
         $('#reset').hide();
     });
+    //affichager de buton valider et reset signature canvas
     $('#newSignature').click(function () {
         $('#valid').fadeIn("slow");
         $('#reset').fadeIn("slow");
     });
+    //reinitialize la signature
+    //on poura plus tard sauvgarder la signature en jpeg...
     $('#reset').click(function () {
         Signature.signatureClear();
         $('#valid').hide();
     });
+    //le buton principal du asside valider qui controle le declanchement du timer(sessionStorage) nom et le prenom sont presents pour le local storrige
     $('#valid').click(function (e) {
         e.preventDefault();
 
@@ -69,10 +75,12 @@ $(function () {
 
     });
 
+    //verifie si le sessionStorage est demarer pour continuer le meme
     if (sessionStorage.getItem('countDown')) {
         startClock(sessionStorage.countDown);
     }
 
+    //anuler la reservation
     $('#cancelReservation').click(function () {
         $('#infoReservation').addClass('d-none');
         sessionStorage.clear();
@@ -80,8 +88,7 @@ $(function () {
         $('#timing').hide();
     });
 
-    // cancelReservation();
-
+    //autoplay slider
     var autoplay;
     $('#checkbox').change(function () {
 
