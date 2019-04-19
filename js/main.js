@@ -5,7 +5,6 @@ $(function () {
         initMap();
 
 
-
         if (localStorage.getItem('name') && localStorage.getItem('surname')) {
             console.log(localStorage.getItem('surname'));
             $('#name').val(localStorage.getItem('name'));
@@ -48,7 +47,7 @@ $(function () {
 
         var nameInput = document.getElementById('name').value;
         var surnameInput = document.getElementById('surname').value;
-console.log(nameInput);
+        console.log(nameInput);
         if (nameInput !== '' && surnameInput !== '') {
             //localStorage name and surname
             localStorage.setItem('name', nameInput);
@@ -66,9 +65,6 @@ console.log(nameInput);
         } else {
             alert('Veuillez indiquez votre nom et votre prenom');
         }
-
-
-
 
 
     });
@@ -89,7 +85,7 @@ console.log(nameInput);
     var autoplay;
     $('#checkbox').change(function () {
 
-        if ($('#checkbox').is(':checked')){
+        if ($('#checkbox').is(':checked')) {
             autoplay = setInterval(function () {
                 Slider.moveRight();
             }, 5000);
