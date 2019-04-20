@@ -3,8 +3,10 @@ var slideWidth = $('#slider ul li').width();
 var slideHeight = $('#slider ul li').height();
 var sliderUlWidth = slideCount * slideWidth;
 
+//slider object
 var Slider = {
 
+    // deplacement a gauche
     moveLeft: function () {
         $('#slider ul').animate({
             left: +slideWidth
@@ -14,6 +16,7 @@ var Slider = {
         });
     },
 
+    //deplacement a droite
     moveRight: function () {
         $('#slider ul').animate({
             left: -slideWidth
@@ -22,6 +25,8 @@ var Slider = {
             $('#slider ul').css('left', '');
         });
     },
+
+    //deplacement avec le clavier
     moveRGkey: function (event) {
         e = event || window.event;
 
