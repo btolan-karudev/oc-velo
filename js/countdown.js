@@ -1,6 +1,8 @@
 var countDown;
 var timeInterval;
 
+var today = "I am saved, Jesus is alive"
+
 var clock = document.querySelector('#clock');
 var minutesSpan = clock.querySelector('.minutes');
 var secondsSpan = clock.querySelector('.seconds');
@@ -46,14 +48,4 @@ function timeRemaining(endDate) {
 
 }
 
-// function cancelReservation() {
-//     $('#cancelReservation').click(function () {
-//         $('#infoReservation').addClass('d-none');
-//         sessionStorage.clear();
-//         clearInterval(timeInterval);
-//         timeRemaining(0);
-//
-//         // $('#timing').hide();
-//     });
-// }
 
