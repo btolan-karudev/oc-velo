@@ -6,18 +6,6 @@ var markers = [];
 var icons;
 var iconBase;
 
-$('#timing').hide();
-
-var savedTime = sessionStorage.getItem('countDown') || false;
-
-if (savedTime) {
-    CountDown.startClock(savedTime);
-    $('#timing').show();
-}
-
-$('#asideInfo').hide();
-$('#canvas').hide();
-
 var MyMap = {
     initMap: function () {
         map = new google.maps.Map(document.getElementById('map'), {

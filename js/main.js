@@ -12,6 +12,14 @@ $(function () {
             $('#surname').val(localStorage.getItem('surname'));
 
         }
+        //verification si une reservation est present
+        var savedTime = sessionStorage.getItem('countDown') || false;
+
+        if (savedTime) {
+            CountDown.startClock(savedTime);
+            $('#timing').show();
+        }
+
         //bouton reinitialisation nom et prenom
         $('#resetName').click(function (e) {
             e.preventDefault();
@@ -23,6 +31,12 @@ $(function () {
 
 
     };
+
+
+
+    $('#timing').hide();
+    $('#asideInfo').hide();
+    $('#canvas').hide();
 
 
     // call signatureCapture function
