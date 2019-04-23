@@ -1,8 +1,8 @@
 $(function () {
 
-    //apelle la deuxieme fois le windows onload pour l api de google maps
+    //apeler la deuxieme fois le windows onload pour l api de google maps
     window.onload = function () {
-        //initialize map
+        //initialisation de la carte
         MyMap.initMap();
 
         //verifier si le local storige est en place pour recuperer le nom et le prenom
@@ -12,7 +12,7 @@ $(function () {
             $('#surname').val(localStorage.getItem('surname'));
 
         }
-        //button reset nom et prenom
+        //bouton reinitialisation nom et prenom
         $('#resetName').click(function (e) {
             e.preventDefault();
             localStorage.removeItem('name');
@@ -36,18 +36,18 @@ $(function () {
         $('#valid').hide();
         $('#reset').hide();
     });
-    //affichager de buton valider et reset signature canvas
+    //affichage du bouton valider et reinitialisation signature canvas
     $('#newSignature').click(function () {
         $('#valid').fadeIn("slow");
         $('#reset').fadeIn("slow");
     });
-    //reinitialize la signature
-    //on poura plus tard sauvgarder la signature en jpeg...
+    //reinitialiser la signature
+    //on pourra plus tard sauvegarder la signature en jpeg...
     $('#reset').click(function () {
         Signature.signatureClear();
         $('#valid').hide();
     });
-    //le buton principal du asside valider qui controle le declanchement du timer(sessionStorage) nom et le prenom sont presents pour le local storrige
+    //le bouton principal du 'asside' valider qui controle le declanchement du timer(sessionStorage) nom et le prenom sont presents pour le local storrige
     $('#valid').click(function (e) {
         e.preventDefault();
 
@@ -55,7 +55,7 @@ $(function () {
         var surnameInput = document.getElementById('surname').value;
         console.log(nameInput);
         if (nameInput !== '' && surnameInput !== '') {
-            //localStorage name and surname
+            //localStorage nom et prenom
             localStorage.setItem('name', nameInput);
             localStorage.setItem('surname', surnameInput);
             sessionStorage.clear();
@@ -75,12 +75,12 @@ $(function () {
 
     });
 
-    //verifie si le sessionStorage est demarer pour continuer le meme
+    //verifier si la sessionStorage est demaree pour continuer la meme
     if (sessionStorage.getItem('countDown')) {
         CountDown.startClock(sessionStorage.countDown);
     }
 
-    //anuler la reservation
+    //annuler la reservation
     $('#cancelReservation').click(function () {
         $('#infoReservation').addClass('d-none');
         sessionStorage.clear();
