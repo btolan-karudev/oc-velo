@@ -61,7 +61,7 @@ $(function () {
             sessionStorage.clear();
             var endDate = new Date().getTime() + (20 * 60 * 1000);
             sessionStorage.setItem('countDown', endDate);
-            startClock(endDate);
+            CountDown.startClock(endDate);
             $('#asideInfo').hide();
             $('#canvas').hide();
             $('#map').removeClass('col-md-9').addClass('col-md-12');
@@ -77,7 +77,7 @@ $(function () {
 
     //verifie si le sessionStorage est demarer pour continuer le meme
     if (sessionStorage.getItem('countDown')) {
-        startClock(sessionStorage.countDown);
+        CountDown.startClock(sessionStorage.countDown);
     }
 
     //anuler la reservation

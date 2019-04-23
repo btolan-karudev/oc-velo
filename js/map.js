@@ -11,7 +11,7 @@ $('#timing').hide();
 var savedTime = sessionStorage.getItem('countDown') || false;
 
 if (savedTime) {
-    startClock(savedTime);
+    CountDown.startClock(savedTime);
     $('#timing').show();
 }
 
