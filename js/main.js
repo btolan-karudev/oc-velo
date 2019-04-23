@@ -3,7 +3,6 @@ $(function () {
     //apelle la deuxieme fois le windows onload pour l api de google maps
     window.onload = function () {
         //initialize map
-        // Map.isPrototypeOf(google.maps.Map);
         MyMap.initMap();
 
         //verifier si le local storige est en place pour recuperer le nom et le prenom
@@ -30,7 +29,7 @@ $(function () {
     Signature.signatureCapture();
 
     //signature controls
-    //quand on appuie sur le buton reserver affichage de canvas
+    //quand on appuie sur le bouton reserver affichage de canvas
     $('#reserver').click(function (e) {
         e.preventDefault();
         $('#canvas').fadeIn("slow");
