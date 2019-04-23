@@ -3,7 +3,7 @@ $(function () {
     //apelle la deuxieme fois le wondows onload pour l api de google maps
     window.onload = function () {
         //initialize map
-        initMap();
+        Map.initMap();
 
         //verifier si le local storige est en place pour recuperer le nom et le prenom
         if (localStorage.getItem('name') && localStorage.getItem('surname')) {
