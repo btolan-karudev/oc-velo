@@ -109,14 +109,16 @@ $(function () {
     $('#slider ul').css({width: sliderUlWidth, marginLeft: -slideWidth});
 
     $('#slider ul li:last-child').prependTo('#slider ul');
+    //onclik left arrow move left
     $('a.control_prev').click(function () {
         Slider.moveLeft();
     });
-
+    //onclik right arrow move right
     $('a.control_next').click(function () {
         Slider.moveRight();
     });
 
+    //on keydown appele de la function moveRgKeys
     $('body').on('keydown', function () {
         Slider.moveRGkey();
     });
