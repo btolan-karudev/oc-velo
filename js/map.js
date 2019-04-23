@@ -18,8 +18,7 @@ if (savedTime) {
 $('#asideInfo').hide();
 $('#canvas').hide();
 
-
-var Map = {
+var MyMap = {
     initMap: function () {
         map = new google.maps.Map(document.getElementById('map'), {
             center: {
@@ -32,7 +31,7 @@ var Map = {
         });
 
         //appele jcdevaux avec ajax
-        Map.ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=c59b83194264e938b79a66af6d880dda6d6a2c8b",
+        MyMap.ajaxGet("https://api.jcdecaux.com/vls/v1/stations?contract=Lyon&apiKey=c59b83194264e938b79a66af6d880dda6d6a2c8b",
             function (reponse) {
                 stations = JSON.parse(reponse);
 
