@@ -33,7 +33,6 @@ $(function () {
     };
 
 
-
     $('#timing').hide();
     $('#asideInfo').hide();
     $('#canvas').hide();

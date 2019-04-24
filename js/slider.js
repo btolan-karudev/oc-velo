@@ -36,4 +36,4 @@ var Slider = {
             Slider.moveRight();
         }
     }
-} ;
+};
