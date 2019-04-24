@@ -116,6 +116,7 @@ $(function () {
 
 
     });
+    $('#checkbox').trigger('change');
 
 
     $('#slider').css({width: slideWidth, height: slideHeight});
