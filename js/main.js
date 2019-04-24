@@ -106,6 +106,13 @@ $(function () {
 
     //autoplay slider
     var autoplay;
+    if ($('#checkbox').is(':checked')) {
+        autoplay = setInterval(function () {
+            Slider.moveRight();
+        }, 5000);
+    };
+
+
     $('#checkbox').change(function () {
 
         if ($('#checkbox').is(':checked')) {
@@ -118,6 +125,7 @@ $(function () {
 
 
     });
+
 
 
     $('#slider').css({width: slideWidth, height: slideHeight});
