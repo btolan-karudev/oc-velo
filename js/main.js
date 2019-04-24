@@ -18,6 +18,7 @@ $(function () {
         if (savedTime) {
             CountDown.startClock(savedTime);
             $('#timing').show();
+            $('.timing').show();
         }
 
         //bouton reinitialisation nom et prenom
@@ -34,6 +35,7 @@ $(function () {
 
 
     $('#timing').hide();
+    $('.timing').hide();
     $('#asideInfo').hide();
     $('#canvas').hide();
 
@@ -55,7 +57,6 @@ $(function () {
         $('#reset').fadeIn("slow");
     });
     //reinitialiser la signature
-    //on pourra plus tard sauvegarder la signature en jpeg...
     $('#reset').click(function () {
         Signature.signatureClear();
         $('#valid').hide();
@@ -81,6 +82,7 @@ $(function () {
             $([document.documentElement, document.body]).animate({
                 scrollTop: $('#timing').delay(1000).fadeIn(600).offset().bottom
             }, 500);
+            $('.timing').show();
         } else {
             alert('Veuillez indiquez votre nom et votre prenom');
         }
@@ -99,6 +101,7 @@ $(function () {
         sessionStorage.clear();
         clearInterval(timeInterval);
         $('#timing').hide();
+        $('.timing').hide();
     });
 
     //autoplay slider
@@ -138,6 +141,3 @@ $(function () {
 
 
 });
-
-
-

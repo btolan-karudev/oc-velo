@@ -5,6 +5,7 @@ var minutesSpan = clock.querySelector('.minutes');
 var secondsSpan = clock.querySelector('.seconds');
 
 var CountDown = {
+
     startClock: function (endTime) {
 
         clearInterval(timeInterval);
@@ -42,6 +43,3 @@ var CountDown = {
 
     }
 };
-
-
-

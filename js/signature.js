@@ -2,7 +2,6 @@ var canvas = document.getElementById("newSignature");
 var context = canvas.getContext("2d");
 var disableSave = true;
 var pixels = [];
-// var cpixels = [];
 var xyLast = {};
 var xyAddLast = {};
 var calculate = false;
@@ -22,12 +21,6 @@ var Signature = {
         canvas.addEventListener('touchstart', Signature.on_mousedown, false);
         canvas.addEventListener('mousedown', Signature.on_mousedown, false);
     },
-
-    // signatureSave: function () {
-    //     var canvas = document.getElementById("newSignature"); // save canvas image as data url (png format by default)
-    //     var dataURL = canvas.toDataURL("image/png");
-    //     document.getElementById("saveSignature").src = dataURL;
-    // },
 
     signatureClear: function () {
         var canvas = document.getElementById("newSignature");
@@ -126,4 +119,3 @@ var Signature = {
 
 
 };
-

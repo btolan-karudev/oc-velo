@@ -3,7 +3,6 @@ var slideWidth = $('#slider ul li').width();
 var slideHeight = $('#slider ul li').height();
 var sliderUlWidth = slideCount * slideWidth;
 
-//slider object
 var Slider = {
 
     // deplacement a gauche

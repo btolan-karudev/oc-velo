@@ -1,5 +1,3 @@
-//mapGoogle
-
 var map;
 var stations = [];
 var markers = [];
@@ -123,6 +121,3 @@ var MyMap = {
         req.send(null);
     }
 };
-
-
-

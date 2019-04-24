@@ -26,7 +26,7 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#section1">Info</a></li>
                     <li><a href="#map">Reservation</a></li>
-                    <li><a href="#section3">Ma Reservation</a></li>
+                    <li><a href="#section3" class="timing">Ma Reservation</a></li>
                 </ul>
             </div>
         </nav>
@@ -119,10 +119,6 @@
                     <input type="checkbox" class="form-check-input" id="checkbox">
                     <label class="form-check-label" for="checkbox">Autoplay</label>
                 </div>
-                <!--                <div class="slider_option">-->
-                <!--                    <input type="checkbox" id="checkbox">-->
-                <!--                    <label for="checkbox">Autoplay Slider</label>-->
-                <!--                </div>-->
 
 
             </div>
@@ -138,23 +134,7 @@
     <section class="container">
         <div class="row">
 
-            <div id="timing" class="col-lg-12">
-                <dd>Votre reservation va prendre fin dans:</dd>
-                <div class="container mb-3" id="section3">
-                    <!-- <input type="date" name="endDate"> -->
-                    <div id="clock" class="mb-3">
-                        <div><span class="minutes">0</span>
-                            <small>Minutes</small>
-                        </div>
-                        <div><span class="seconds">0</span>
-                            <small>Seconds</small>
-                        </div>
-                    </div>
-                    <button type="button" id="cancelReservation" class="btn btn-danger">Annuler ma reservation!</button>
-                </div>
-            </div>
-
-
+    
             <div class="col-md-12 d-flex justify-content-center mt-3">
                 <div id="infoReservation" class="alert alert-danger d-none"
                      role="alert">
@@ -199,7 +179,21 @@
     <hr>
     <!--Footer-->
     <footer id="footer" class="container mb-5">
-
+        <div id="timing" class="col-lg-12">
+            <dd>Votre reservation va prendre fin dans:</dd>
+            <div class="container mb-3" id="section3">
+                <!-- <input type="date" name="endDate"> -->
+                <div id="clock" class="mb-3" >
+                    <div><span class="minutes">0</span>
+                        <small>Minutes</small>
+                    </div>
+                    <div><span class="seconds">0</span>
+                        <small>Seconds</small>
+                    </div>
+                </div>
+                <button type="button" id="cancelReservation" class="btn btn-danger">Annuler ma reservation!</button>
+            </div>
+        </div>
     </footer>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
