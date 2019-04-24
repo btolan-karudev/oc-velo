@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="12fa8b93-7073-450c-9c2e-886261798006" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/VELOvBenjaminTolanLivraleppt.pptx" beforeDir="false" afterPath="$PROJECT_DIR$/VELOvBenjaminTolanLivraleppt.pptx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjecVeloTolanAvril2019.zip" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="199">
-              <caret line="119" column="90" lean-forward="true" selection-start-line="119" selection-start-column="90" selection-end-line="119" selection-end-column="90" />
+              <caret line="119" column="90" selection-start-line="119" selection-start-column="90" selection-end-line="119" selection-end-column="90" />
             </state>
           </provider>
         </entry>
@@ -180,16 +178,15 @@
       <workItem from="1555422265516" duration="2098000" />
       <workItem from="1555708962242" duration="2045000" />
       <workItem from="1555824262532" duration="132000" />
-      <workItem from="1556006985192" duration="15794000" />
+      <workItem from="1556006985192" duration="16576000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63918000" />
+    <option name="totallyTimeSpent" value="64700000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-6" y="0" width="1613" height="1046" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.30392787" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -258,7 +255,7 @@
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="199">
-          <caret line="119" column="90" lean-forward="true" selection-start-line="119" selection-start-column="90" selection-end-line="119" selection-end-column="90" />
+          <caret line="119" column="90" selection-start-line="119" selection-start-column="90" selection-end-line="119" selection-end-column="90" />
         </state>
       </provider>
     </entry>
