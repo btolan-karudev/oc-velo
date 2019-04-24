@@ -88,8 +88,8 @@ var MyMap = {
                                 $('#asideInfo').fadeIn("slow");
                                 $('#canvas').hide();
                                 Signature.signatureClear();
-                                $("#resaInfo").empty().append("<br> Adresse: " + this.address + "<br> Etat station: "
-                                    + this.status + "<br> Nombre de velo :" + this.available_bikes);
+                                $("#resaInfo").empty().append("<br> Adresse: " + this.address + "<br>Etat de la station: "
+                                    + this.status + "<br> Nombre de vélo :" + this.available_bikes);
                             }
                         }
                     );
